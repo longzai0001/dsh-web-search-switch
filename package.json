@@ -1,0 +1,55 @@
+{
+  "name": "dsh-web-search-switch",
+  "version": "0.2.1",
+  "description": "DSH 网页搜索多端点管理插件：在设置页管理官方 Messages、官方 Search API 及任意 Anthropic 兼容端点，全局选默认，模型候选来自设置 → 模型",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=24"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "web-search",
+    "search-provider",
+    "anthropic",
+    "deepseek"
+  ],
+  "license": "MIT",
+  "author": "longzai0001",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/longzai0001/dsh-web-search-switch.git"
+  },
+  "homepage": "https://github.com/longzai0001/dsh-web-search-switch#readme",
+  "bugs": {
+    "url": "https://github.com/longzai0001/dsh-web-search-switch/issues"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-settings"
+      ]
+    },
+    "compatibility": {
+      "dsh": ">=0.2.1-rc.2 <0.3.0-0",
+      "dshReleases": {
+        "0.2.1-rc.2": "compatible"
+      }
+    }
+  }
+}

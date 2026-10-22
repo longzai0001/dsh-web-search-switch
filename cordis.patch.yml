@@ -1,0 +1,5 @@
+# dsh-web-search-switch：安装本包即自动插入下面的条目。
+# provider id 仍是 deepseek-official，因此 web.searchProvider 不需要改动。
+- insert:
+    - id: web-search-switch
+      name: dsh-web-search-switch
