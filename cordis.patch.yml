@@ -1,5 +1,10 @@
 # dsh-web-search-switch：安装本包即自动插入下面的条目。
 # provider id 仍是 deepseek-official，因此 web.searchProvider 不需要改动。
+# 内置的 web-search-deepseek 也注册同一 id：这里能禁用就禁用（best effort）；
+# 若 DSH 又追加同 id 的条目、或版本改了条目 id，宿主会在运行时接管该 id
+# （见 lib/index.js 的 installSearchProvider）。
+- id: web-search-deepseek
+  disabled: true
 - insert:
     - id: web-search-switch
       name: dsh-web-search-switch

@@ -116,8 +116,11 @@ Messages 协议的 `model` 是必填项，且必须是该端点认识的名字�
 **结果被截断**
 工具层有结果上限，提供商返回更多时会被截断，属正常行为。
 
+**报 `WEB_DUPLICATE_PROVIDER` / provider id 已被注册**
+插件会在启动时接管 `deepseek-official`：内置的 `web-search-deepseek` 先注册也没关系，插件会替换它，并忽略之后同 id 的重复注册。如果仍报错，通常是旧 vendor 插件或其它搜索插件抢先注册且无法被替换，禁用对应条目后重启即可。
+
 **和旧插件冲突**
-如果之前装过其他搜索插件或手工 vendor 条目，只保留一个注册 `deepseek-official` 的条目；旧的请在 profile 的 `cordis.patch.yml` 里置 `disabled: true`。
+如果之前装过其他搜索插件或手工 vendor 条目，建议只保留本插件，旧的置 `disabled: true`（本插件会自动接管 `deepseek-official`，但其它插件不应再注册同一 id）。
 
 ## 卸载与回退
 

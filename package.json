@@ -1,6 +1,6 @@
 {
   "name": "dsh-web-search-switch",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "DSH 网页搜索多端点管理插件：在设置页管理官方 Messages、官方 Search API 及任意 Anthropic 兼容端点，全局选默认，模型候选来自设置 → 模型",
   "type": "module",
   "main": "lib/index.js",
